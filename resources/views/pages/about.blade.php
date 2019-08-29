@@ -19,7 +19,7 @@
         </div>
         <p>
             Feel free to help to improve the
-            <a href="#"> source code</a>.
+            <a href="https://github.com/ahmedKhaireddine/laracarte"> source code</a>.
         </p>
         <hr>
         <h2>What is Laramap?</h2>
