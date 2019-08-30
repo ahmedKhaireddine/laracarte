@@ -10,8 +10,17 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Mail\ContactMessageCreated;
 
 Route::name('home_path')->get('/', 'PagesController@home');
+
+Route::get('/text-email', function(){
+    return new ContactMessageCreated(
+        'haroun',
+        'haroun@gmail.com',
+        'hello worled im her'
+    );
+});
 
 Route::get('/about', [
     'as' => 'about_path',
@@ -19,6 +28,11 @@ Route::get('/about', [
 ]);
 
 Route::get('/contact', [
-    'as' => 'contact_path',
+    'as' => 'contact.create',
     'uses' => 'ContactController@create'
+]);
+
+Route::post('/contact', [
+    'as' => 'contact.store',
+    'uses' => 'ContactController@store'
 ]);
